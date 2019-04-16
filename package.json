@@ -1,0 +1,35 @@
+{
+  "name": "webpack_react_frame",
+  "version": "1.0.0",
+  "description": "webpack搭建react高性能框架",
+  "main": "webpackl.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack",
+    "dll": "webpack --config webpack_dll.config.js",
+    "main": "webpack --config webpack.main.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gstring-w/webpack_react_frame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gstring-w/webpack_react_frame/issues"
+  },
+  "homepage": "https://github.com/Gstring-w/webpack_react_frame#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0"
+  }
+}
