@@ -6,6 +6,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackplugin = require("clean-webpack-plugin");
 
 const HotModuleReplacrmentPlugin = require("webpack/lib/HotModuleReplacementPlugin");
+const NameModulesPlugin = require("webpack/lib/NamedModulesPlugin");
+
+const DefinePlugin = require("webpack/lib/DefinePlugin");
+
 const path = require("path");
 const fs = require("fs");
 const loading = {
@@ -69,11 +73,17 @@ const config = {
   },
   plugins: [
     new HotModuleReplacrmentPlugin(),
+    new NameModulesPlugin(),
     new CleanWebpackplugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/assets/index.html"),
       filename: "index.html",
       loading: loading
+    }),
+    new DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("development")
+      }
     })
   ],
   mode: "development",
