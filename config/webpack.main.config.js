@@ -7,7 +7,7 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "./dist")
+    path: path.resolve(__dirname, "../dist")
   },
   module: {
     rules: [
@@ -19,10 +19,10 @@ module.exports = {
   },
   plugins: [
     new DllReferencePlugin({
-      manifest: require("./dist/react.manifest.json")
+      manifest: require("../dist/react.manifest.json")
     }),
     new DllReferencePlugin({
-      manifest: require("./dist/polyfill.manifest.json")
+      manifest: require("../dist/polyfill.manifest.json")
     })
   ]
 };
