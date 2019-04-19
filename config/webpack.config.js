@@ -26,7 +26,8 @@ const config = {
   },
   output: {
     filename: "[name][hash:4].js",
-    path: path.resolve(__dirname, "../dist")
+    path: path.resolve(__dirname, "../dist"),
+    chunkFilename: "[name].js"
   },
 
   module: {
@@ -98,4 +99,8 @@ module.exports = config;
  * 配置相中的watchOptions.poll 用于控制定时检查周期。 每秒检查多少次
  *  当发现每个文件改动时，不会立即告诉监听者，而是先缓存起来，收集一段时间的变化后，再一次性告诉监听者
  *
+ *
+ * 代码分割：
+ * 1.将不需要展示的代码分割出去
+ * 2 再适当的时机去加载对应的代码
  */

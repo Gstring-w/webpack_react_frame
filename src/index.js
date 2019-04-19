@@ -4,12 +4,7 @@ import App from "./App";
 import { AppContainer } from "react-hot-loader"; //设置这里
 
 const render = _App => {
-  ReactDOM.render(
-    <AppContainer>
-      <_App />
-    </AppContainer>,
-    document.getElementById("root")
-  );
+  ReactDOM.render(<_App />, document.getElementById("root"));
 };
 
 render(App);
