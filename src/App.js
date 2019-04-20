@@ -1,24 +1,28 @@
 import React, { Component } from "react";
+import { HashRouter, Route, Link } from "react-router-dom";
 
+import asyncComponent from "./asyncComponent";
+import homePage from "./homePage";
+
+import "./App.scss";
 export default class App extends Component {
-  componentDidMount() {
-    console.log(111);
-    var show = () => {
-      console.log(222);
-    };
-    show();
-  }
-  handleClick = () => {
-    import("./show").then(show => {
-      console.log(show);
-      show.default("hello webpack!!!");
-    });
-  };
   render() {
     return (
-      <div>
-        <div onClick={this.handleClick}>点击加载show.js代码</div>;
-      </div>
+      <HashRouter>
+        <div className="wrapper">
+          <nav>
+            <Link to="/">Home</Link> |<Link to="/about">about</Link> |
+            <Link to="/login">login</Link>
+          </nav>
+
+          <Route exact path="/" component={homePage} />
+          <Route
+            exact
+            path="/about"
+            component={asyncComponent(() => import("./pageAbout"))}
+          />
+        </div>
+      </HashRouter>
     );
   }
 }
